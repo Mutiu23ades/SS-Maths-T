@@ -1,1 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>SSS Mathematics App T</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f2f7ff;
+  color:#172033;
+  line-height:1.65;
+}
+
+header{
+  background:#0756a8;
+  color:white;
+  text-align:center;
+  padding:22px 15px;
+}
+
+header h1{margin:0;font-size:25px}
+header p{margin:7px 0 0}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:15px;
+}
+
+.card{
+  background:white;
+  padding:18px;
+  margin:15px 0;
+  border-radius:12px;
+  box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+h2{color:#0756a8}
+h3{color:#06457f}
+
+select,input,button{
+  width:100%;
+  padding:13px;
+  font-size:16px;
+  border-radius:8px;
+}
+
+select,input{
+  border:1px solid #bbb;
+}
+
+button{
+  border:none;
+  background:#0756a8;
+  color:white;
+  margin-top:12px;
+  cursor:pointer;
+}
+
+button:hover{background:#043d79}
+
+.formula{
+  background:#eaf4ff;
+  border-left:5px solid #0756a8;
+  padding:12px;
+  margin:12px 0;
+  font-weight:bold;
+}
+
+.example{
+  background:#f8fbff;
+  border:1px solid #c9dff7;
+  padding:14px;
+  margin:14px 0;
+  border-radius:8px;
+}
+
+.answer{
+  background:#edf9ef;
+  border-left:5px solid #299447;
+  padding:10px;
+  margin-top:8px;
+}
+
+.score{
+  margin-top:15px;
+  padding:12px;
+  background:#eaf4ff;
+  font-size:18px;
+  font-weight:bold;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>SSS MATHEMATICS – APP T</h1>
+<p>Topics 96–100 | Further Trigonometry</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Select a Topic</h2>
+
+<select id="topicSelect" onchange="showTopic()">
+<option value="">-- Select Topic --</option>
+<option value="96">96. Further Trigonometry</option>
+<option value="97">97. Bearings</option>
+<option value="98">98. Heights and Distances</option>
+<option value="99">99. Sine Rule</option>
+<option value="100">100. Cosine Rule</option>
+</select>
+</div>
+
+<div id="content"></div>
+
+</div>
+
+<footer>
+SSS Mathematics App T • Topics 96–100
+</footer>
+
+<script>
+
+const topics = {
+
+96: `
+<div class="card">
+<h2>Topic 96: Further Trigonometry</h2>
+
+<h3>Learning Objectives</h3>
+<ul>
+<li>Apply trigonometric ratios to more advanced problems.</li>
+<li>Use identities involving sine, cosine and tangent.</li>
+<li>Solve trigonometric equations.</li>
+</ul>
+
+<h3>1. Important Identity</h3>
+
+<div class="formula">
+sin²θ + cos²θ = 1
+</div>
+
+<p>
+This identity is one of the most important relationships in trigonometry.
+It can be used to find an unknown trigonometric ratio.
+</p>
+
+<div class="example">
+<b>Example 1:</b> If sin θ = 3/5 and θ is acute, find cos θ.
+<br><br>
+sin²θ + cos²θ = 1
+<br>
+(3/5)² + cos²θ = 1
+<br>
+9/25 + cos²θ = 25/25
+<br>
+cos²θ = 16/25
+<br>
+cos θ = 4/5
+<div class="answer"><b>Answer: cos θ = 4/5</b></div>
+</div>
+
+<h3>2. Relationship Between Tangent, Sine and Cosine</h3>
+
+<div class="formula">
+tan θ = sin θ / cos θ
+</div>
+
+<div class="example">
+<b>Example 2:</b> If sin θ = 3/5 and cos θ = 4/5, find tan θ.
+<br><br>
+tan θ = (3/5) ÷ (4/5)
+<br>
+= 3/4
+<div class="answer"><b>Answer: tan θ = 3/4</b></div>
+</div>
+
+<h3>Practice Questions</h3>
+<ol>
+<li>State the identity involving sin²θ and cos²θ.</li>
+<li>If sin θ = 5/13, find cos θ for an acute angle.</li>
+<li>If sin θ = 3/5 and cos θ = 4/5, find tan θ.</li>
+<li>Express tan θ in terms of sin θ and cos θ.</li>
+</ol>
+</div>
+`,
+
+97: `
+<div class="card">
+<h2>Topic 97: Bearings</h2>
+
+<h3>Learning Objectives</h3>
+<ul>
+<li>Understand the meaning of bearings.</li>
+<li>Measure and write bearings correctly.</li>
+<li>Solve problems involving directions.</li>
+</ul>
+
+<h3>1. Meaning of Bearing</h3>
+
+<p>
+A bearing is a direction measured clockwise from North.
+Bearings are usually written using three figures.
+</p>
+
+<h3>2. Examples of Bearings</h3>
+
+<div class="formula">
+North = 000° or 360°
+<br>
+East = 090°
+<br>
+South = 180°
+<br>
+West = 270°
+</div>
+
+<h3>3. Important Rules</h3>
+
+<ul>
+<li>Always measure clockwise from North.</li>
+<li>Use three digits where necessary.</li>
+<li>Include the degree sign.</li>
+</ul>
+
+<div class="example">
+<b>Example 1:</b> What is the bearing of East?
+<br><br>
+East is 90° clockwise from North.
+<div class="answer"><b>Answer: 090°</b></div>
+</div>
+
+<div class="example">
+<b>Example 2:</b> What is the bearing of South?
+<div class="answer"><b>Answer: 180°</b></div>
+</div>
+
+<h3>Back Bearings</h3>
+
+<p>
+The back bearing is the bearing in the opposite direction.
+</p>
+
+<div class="formula">
+If bearing is less than 180°, add 180°.
+<br>
+If bearing is greater than 180°, subtract 180°.
+</div>
+
+<div class="example">
+<b>Example 3:</b> Find the back bearing of 070°.
+<br><br>
+070° + 180° = 250°
+<div class="answer"><b>Answer: 250°</b></div>
+</div>
+
+<h3>Practice Questions</h3>
+<ol>
+<li>From which direction are bearings measured?</li>
+<li>What is the bearing of West?</li>
+<li>What is the bearing of South?</li>
+<li>Find the back bearing of 120°.</li>
+<li>Find the back bearing of 250°.</li>
+</ol>
+</div>
+`,
+
+98: `
+<div class="card">
+<h2>Topic 98: Heights and Distances</h2>
+
+<h3>Learning Objectives</h3>
+<ul>
+<li>Use trigonometry to solve height problems.</li>
+<li>Understand angles of elevation and depression.</li>
+<li>Calculate distances using trigonometric ratios.</li>
+</ul>
+
+<h3>1. Angle of Elevation</h3>
+
+<p>
+An angle of elevation is the angle between the horizontal line and the
+line of sight when looking upward.
+</p>
+
+<h3>2. Angle of Depression</h3>
+
+<p>
+An angle of depression is the angle between the horizontal line and the
+line of sight when looking downward.
+</p>
+
+<h3>3. Using Tangent</h3>
+
+<div class="formula">
+tan θ = Opposite / Adjacent
+</div>
+
+<div class="example">
+<b>Example 1:</b> A person stands 20 m from a building.
+The angle of elevation of the top is 45°. Find the height of the building.
+<br><br>
+tan 45° = Height / 20
+<br>
+1 = Height / 20
+<br>
+Height = 20 m
+<div class="answer"><b>Answer: 20 m</b></div>
+</div>
+
+<div class="example">
+<b>Example 2:</b> The angle of elevation of the top of a tree is 30°.
+The observer is 10 m from the tree. Find the height.
+<br><br>
+tan 30° = Height / 10
+<br>
+Height = 10 tan 30°
+<br>
+Height ≈ 5.77 m
+<div class="answer"><b>Answer: approximately 5.77 m</b></div>
+</div>
+
+<h3>Practice Questions</h3>
+<ol>
+<li>Define angle of elevation.</li>
+<li>Define angle of depression.</li>
+<li>A building is viewed from 15 m away at an elevation angle of 45°. Find its height.</li>
+<li>Which trigonometric ratio is commonly used when opposite and adjacent sides are involved?</li>
+</ol>
+</div>
+`,
+
+99: `
+<div class="card">
+<h2>Topic 99: Sine Rule</h2>
+
+<h3>Learning Objectives</h3>
+<ul>
+<li>State the sine rule.</li>
+<li>Use the sine rule to find unknown sides.</li>
+<li>Use the sine rule to find unknown angles.</li>
+</ul>
+
+<h3>1. The Sine Rule</h3>
+
+<p>
+The sine rule is used in triangles that are not necessarily right-angled.
+</p>
+
+<div class="formula">
+a / sin A = b / sin B = c / sin C
+</div>
+
+<p>
+Each side is paired with its opposite angle.
+</p>
+
+<div class="example">
+<b>Example 1:</b> In a triangle, side a = 10 cm, angle A = 30° and
+angle B = 45°. Find side b.
+<br><br>
+a / sin A = b / sin B
+<br>
+10 / sin30° = b / sin45°
+<br>
+b = 10 sin45° / sin30°
+<br>
+b = 10 × 0.707 / 0.5
+<br>
+b ≈ 14.14 cm
+<div class="answer"><b>Answer: approximately 14.14 cm</b></div>
+</div>
+
+<h3>Finding an Angle</h3>
+
+<div class="formula">
+sin A / a = sin B / b
+</div>
+
+<p>
+Rearrange the equation and use inverse sine where necessary.
+</p>
+
+<h3>Practice Questions</h3>
+<ol>
+<li>State the sine rule.</li>
+<li>Which angle is paired with side a?</li>
+<li>In a triangle, a = 8 cm, A = 30° and B = 60°. Find b.</li>
+<li>When is the sine rule useful?</li>
+</ol>
+</div>
+`,
+
+100: `
+<div class="card">
+<h2>Topic 100: Cosine Rule</h2>
+
+<h3>Learning Objectives</h3>
+<ul>
+<li>State the cosine rule.</li>
+<li>Calculate an unknown side.</li>
+<li>Calculate an unknown angle.</li>
+</ul>
+
+<h3>1. Cosine Rule for Finding a Side</h3>
+
+<div class="formula">
+a² = b² + c² − 2bc cos A
+</div>
+
+<p>
+The cosine rule is useful when two sides and the included angle are known.
+</p>
+
+<div class="example">
+<b>Example 1:</b> In a triangle, b = 6 cm, c = 8 cm and A = 90°.
+Find side a.
+<br><br>
+a² = 6² + 8² − 2(6)(8)cos90°
+<br>
+a² = 36 + 64 − 0
+<br>
+a² = 100
+<br>
+a = 10 cm
+<div class="answer"><b>Answer: 10 cm</b></div>
+</div>
+
+<h3>2. Cosine Rule for Finding an Angle</h3>
+
+<div class="formula">
+cos A = (b² + c² − a²) / 2bc
+</div>
+
+<p>
+After finding cos A, use the inverse cosine function to find angle A.
+</p>
+
+<div class="example">
+<b>Example 2:</b> A triangle has sides 3 cm, 4 cm and 5 cm.
+Find the angle opposite the side of length 5 cm.
+<br><br>
+cos A = (3² + 4² − 5²) / (2 × 3 × 4)
+<br>
+= (9 + 16 − 25) / 24
+<br>
+= 0
+<br>
+Therefore A = 90°
+<div class="answer"><b>Answer: 90°</b></div>
+</div>
+
+<h3>Practice Questions</h3>
+<ol>
+<li>State the cosine rule for finding side a.</li>
+<li>When is the cosine rule useful?</li>
+<li>Use the cosine rule to find a when b = 5, c = 5 and A = 60°.</li>
+<li>A triangle has sides 5 cm, 12 cm and 13 cm. Find the angle opposite 13 cm.</li>
+</ol>
+</div>
+`
+
+};
+
+function showTopic(){
+const value=document.getElementById("topicSelect").value;
+const content=document.getElementById("content");
+
+if(value && topics[value]){
+content.innerHTML=topics[value]+createTest(value);
+window.scrollTo({
+top:content.offsetTop-10,
+behavior:"smooth"
+});
+}else{
+content.innerHTML="";
+}
+}
+
+function createTest(topic){
+
+const tests={
+
+96:[
+["sin²θ + cos²θ = ?","1"],
+["tan θ = sin θ divided by?","cos θ"],
+["If sin θ = 3/5 and cos θ = 4/5, tan θ =?","3/4"]
+],
+
+97:[
+["Bearings are measured clockwise from?","north"],
+["The bearing of East is?","090"],
+["The back bearing of 070° is?","250"]
+],
+
+98:[
+["Looking upward forms an angle of?","elevation"],
+["tan θ = opposite divided by?","adjacent"],
+["If the angle is 45°, tan 45° =?","1"]
+],
+
+99:[
+["The sine rule pairs each side with its?","opposite angle"],
+["The sine rule uses the function?","sine"],
+["Side a is opposite angle?","A"]
+],
+
+100:[
+["The cosine rule uses the function?","cosine"],
+["If A = 90°, cos A =?","0"],
+["A 3, 4, 5 triangle has one angle of?","90"]
+]
+
+};
+
+let html=`
+<div class="card">
+<h2>Topic Test</h2>
+<p>Answer the questions below.</p>
+`;
+
+tests[topic].forEach((q,i)=>{
+html+=`
+<div class="example">
+<b>${i+1}. ${q[0]}</b>
+<input id="answer${topic}_${i}" placeholder="Type your answer">
+</div>`;
+});
+
+html+=`
+<button onclick="markTest(${topic})">Submit Test</button>
+<div id="result${topic}" class="score"></div>
+</div>`;
+
+return html;
+}
+
+function clean(text){
+return text.toLowerCase()
+.replace(/\s+/g," ")
+.replace(/°/g,"")
+.trim();
+}
+
+function markTest(topic){
+
+const answers={
+96:["1","cos θ","3/4"],
+97:["north","090","250"],
+98:["elevation","adjacent","1"],
+99:["opposite angle","sine","a"],
+100:["cosine","0","90"]
+};
+
+let score=0;
+
+answers[topic].forEach((answer,i)=>{
+const input=document.getElementById(`answer${topic}_${i}`);
+
+if(clean(input.value)===clean(answer)){
+score++;
+}
+});
+
+document.getElementById(`result${topic}`).innerHTML=
+`Your Score: ${score} / ${answers[topic].length}<br><br>`+
+(score===answers[topic].length
+? "Excellent! You have mastered this topic."
+: "Good attempt. Review the lesson and try again.");
+}
+
+</script>
+
+</body>
+</html>
